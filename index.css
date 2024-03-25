@@ -9,6 +9,8 @@ html {
     margin-top: 5%;
 }
 
+/* button */
+
 #newBook {
     width: 200px;
     height: 50px;
@@ -26,6 +28,8 @@ html {
 #newBook:active {
     background-color: #a5f3fc;
 }
+
+/* Table styling */
 
 table > caption {
     color: #cffafe;
@@ -75,7 +79,7 @@ tr:nth-child(odd) td {
     background-color: #ecfeff;
 }
 
-.form {
+#form {
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr;
 }
@@ -115,6 +119,8 @@ tr:nth-child(odd) td {
     background-color: #155e75;
 }
 
+/*  Input field styling and validation */
+
 .input {
     box-sizing: border-box;
     background-color: #ecfeff;
@@ -127,4 +133,20 @@ tr:nth-child(odd) td {
 
 input:focus {
     outline: none;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}
+
+input:valid {
+    background-color: rgba(139, 195, 74, 0.25);
+}
+
+input:invalid {
+    background-color: rgba(185, 35, 38, 0.25);
+}
+
+input:placeholder-shown {
+    background-color: transparent;
 }
