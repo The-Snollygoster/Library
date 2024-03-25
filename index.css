@@ -1,5 +1,5 @@
 html {
-    background-color: #202225;
+    background-color: #083344;
     font-family: sans-serif;
 }
 
@@ -12,27 +12,42 @@ html {
 #newBook {
     width: 200px;
     height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #ecfeff;
+    box-shadow: 3px 3px 3px;
+}
+
+#newBook:hover {
+    background-color: #cffafe;
+}
+
+#newBook:active {
+    background-color: #a5f3fc;
 }
 
 table > caption {
-    color: #99aab5;
-    font-size: 1rem;
+    color: #cffafe;
+    font-size: 1.5rem;
+    margin-bottom: 5px;
 }
 
 table {
     border-collapse: collapse;
     border: 2px solid black;
+    box-shadow: 3px 3px 3px;
     letter-spacing: 1px;
     font-size: 0.8rem;
 }
 
 td, th {
-    border: 1px solid rgb(190, 190, 190);
+    border: 1px solid #083344;
     padding: 10px 20px;
 }
 
 th {
-    background-color: rgb(235, 235, 235);
+    background-color: #0891b2;
 }
 
 td {
@@ -40,14 +55,73 @@ td {
 }
 
 tr:nth-child(even) td {
-    background-color: rgb(250, 250, 250);
+    background-color: #ecfeff;
 }
 
 tr:nth-child(odd) td {
-    background-color: rgb(245, 245, 245);
+    background-color: #cffafe;
 }
 
-caption  {
-    pad: 10px;
+/* Dialog styling */
+
+::backdrop {
+    background-color: #083344;
+    opacity: 0.75;
 }
 
+.dialog {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #ecfeff;
+}
+
+.form {
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr;
+}
+
+.header {
+    font-size: 1.5rem;
+    justify-self: center;
+}
+
+.fieldset {
+    margin-bottom: 20px;
+    padding: 0;
+    width: 250px;
+    height: 50px;
+}
+
+.submit {
+    justify-self: center;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #083344;
+    color: #cffafe;;
+    box-shadow: 3px 3px 3px;
+}
+
+.submit:hover {
+    background-color: #164e63;
+}
+
+.submit:active {
+    background-color: #155e75;
+}
+
+.input {
+    box-sizing: border-box;
+    background-color: #ecfeff;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    font-size: 1rem;
+}
+
+input[type=text]:focus {
+    outline: none;
+}

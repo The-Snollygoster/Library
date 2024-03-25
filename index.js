@@ -1,5 +1,7 @@
 const button = document.getElementById('newBook');
 const table = document.getElementById('table');
+const dialog = document.querySelector('dialog');
+const submit = document.querySelector('dialog button');
 
 function Book(title,author,pages,read) {
     this.title = title;
@@ -14,6 +16,8 @@ const dune = new Book('Dune', 'Frank Herbet', '896', 'No');
 
 const myLibrary = [theHobbit, shogun, dune];
 
+// I probably need to put this inside another function so that I can call it again after
+// a new book is added.
 myLibrary.forEach(function (book) {
     let row = table.insertRow(1);
     let cell1 = row.insertCell(0);
@@ -30,6 +34,14 @@ myLibrary.forEach(function (book) {
 
 // };
 
-// button.addEventListener('click', () => {
+button.addEventListener('click', () => {
+    dialog.showModal();
+});
 
-// });
+submit.addEventListener('click', () => {
+    click.preventDefault();
+
+    let newBook = new Book( , , , )
+
+    dialog.close();
+});
