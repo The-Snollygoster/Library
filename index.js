@@ -2,6 +2,7 @@ const button = document.getElementById('newBook');
 const table = document.getElementById('table');
 const dialog = document.querySelector('dialog');
 const submit = document.querySelector('dialog button');
+const cancel = document.querySelector('dialog #cancel')
 const input = document.querySelectorAll('input');
 
 function Book(title,author,pages,read) {
@@ -17,9 +18,13 @@ const dune = new Book('Dune', 'Frank Herbet', '896', 'No');
 
 const myLibrary = [theHobbit, shogun, dune];
 
+// Currently copies the books already in the array again when adding a new book.
+// I can wipe the entire table each time the function is called but I'm wondering if
+// I could filter the array first for objects already displayed in the table.
+
 function displayLibrary() {
     myLibrary.forEach(function (book) {
-        let row = table.insertRow(1);
+        let row = table.insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
         let cell3 = row.insertCell(2);
@@ -47,5 +52,9 @@ submit.addEventListener('click', (event) => {
     console.log(newBook);
     console.log(myLibrary);
     displayLibrary();
+    dialog.close();
+});
+
+cancel.addEventListener('click', () => {
     dialog.close();
 });

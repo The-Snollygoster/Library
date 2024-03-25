@@ -92,7 +92,8 @@ tr:nth-child(odd) td {
     height: 50px;
 }
 
-.submit {
+#submit,
+#cancel {
     justify-self: center;
     width: 200px;
     height: 50px;
@@ -104,11 +105,13 @@ tr:nth-child(odd) td {
     box-shadow: 3px 3px 3px;
 }
 
-.submit:hover {
+#submit:hover,
+#cancel:hover {
     background-color: #164e63;
 }
 
-.submit:active {
+#submit:active,
+#cancel:active {
     background-color: #155e75;
 }
 
