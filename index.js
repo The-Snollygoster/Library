@@ -4,6 +4,7 @@ const dialog = document.querySelector('dialog');
 const submit = document.querySelector('dialog button');
 const cancel = document.querySelector('dialog #cancel')
 const input = document.querySelectorAll('input');
+const form = document.querySelector('form');
 
 function Book(title,author,pages,read) {
     this.title = title;
@@ -38,16 +39,18 @@ button.addEventListener('click', () => {
 });
 
 submit.addEventListener('click', (event) => {
-    event.preventDefault();
-    let title = input[0].value;
-    let author = input[1].value;
-    let pages = input[2].value;
-    let read = input[3].value;
-    let newBook = new Book(`${title}`, `${author}`, `${pages}`, `${read}`);
-    myLibrary.push(newBook);
-    displayLibrary();
-    document.getElementById('form').reset();
-    dialog.close();
+    if (form.checkValidity() == true) {
+        event.preventDefault();
+        let title = input[0].value;
+        let author = input[1].value;
+        let pages = input[2].value;
+        let read = input[3].value;
+        let newBook = new Book(`${title}`, `${author}`, `${pages}`, `${read}`);
+        myLibrary.push(newBook);
+        displayLibrary();
+        document.getElementById('form').reset();
+        dialog.close();
+    }
 });
 
 cancel.addEventListener('click', () => {
