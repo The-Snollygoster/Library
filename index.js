@@ -32,7 +32,6 @@ function displayLibrary() {
         cell4.innerHTML = book.read;
     });
 };
-displayLibrary();
 
 button.addEventListener('click', () => {
     dialog.showModal();
@@ -46,12 +45,13 @@ submit.addEventListener('click', (event) => {
     let read = input[3].value;
     let newBook = new Book(`${title}`, `${author}`, `${pages}`, `${read}`);
     myLibrary.push(newBook);
-    console.log(newBook);
-    console.log(myLibrary);
     displayLibrary();
+    document.getElementById('form').reset();
     dialog.close();
 });
 
 cancel.addEventListener('click', () => {
     dialog.close();
 });
+
+displayLibrary();
