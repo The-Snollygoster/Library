@@ -66,6 +66,11 @@ tr:nth-child(odd) td {
     background-color: #cffafe;
 }
 
+#check,
+#cross {
+    height: 20px;
+}
+
 /* Dialog styling */
 
 ::backdrop {

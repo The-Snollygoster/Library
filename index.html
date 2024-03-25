@@ -10,14 +10,15 @@
 <body>
 <div class="container">
     <table>
-        <caption>Library of books</caption>
+        <caption>Library Contents</caption>
 
         <thead>
             <tr>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
+                <th scope="col">Year of Publication</th>
                 <th scope="col"># of Pages</th>
-                <th scope="col">Read?</th>
+                <th scope="col">Read Status</th>
             </tr>
         </thead>
         <tbody id="table"></tbody>
@@ -25,9 +26,8 @@
 </div>
 
 <div class="container">
-    <button id="newBook">New Book</button>
+    <button id="newBook">Add New Book</button>
 </div>
-
 <dialog class="dialog">
     <form action="" method="dialog" id="form">
         <h1 class="header">New Book</h1>
@@ -47,7 +47,7 @@
             <legend>Read it?</legend>
             <input type="text" class="input" id="read" placeholder="Have you read it?" pattern="^(?:Yes|No)$">
         </fieldset>
-        <button type="submit" id="submit">Submit</button>
+        <button type="submit" id="submit">Submit Book</button>
         <button type="button" id="cancel">Cancel</button>
     </form>
 </dialog>
