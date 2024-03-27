@@ -23,6 +23,7 @@ html {
 
 #newBook:hover {
     background-color: #cffafe;
+    cursor: pointer;
 }
 
 #newBook:active {
@@ -79,10 +80,38 @@ tr:nth-child(odd) td {
 
 #del:hover {
     background-color: #a5f3fc;
+    cursor: pointer;
 }
 
 #del:active {
     background-color: #cffafe;;
+}
+
+#check:hover,
+#cross:hover {
+    cursor: pointer;
+}
+
+/* tooltip styling and function */
+
+.readColumn {
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 40px;
+    min-width: 120px;
+    padding: 1rem;
+    border-radius: 0.4rem;
+    background: black;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.tooltip:hover {
+    opacity: 1;
 }
 
 /* Dialog and form styling */
