@@ -15,10 +15,12 @@ function Book(title,author,year,pages,read) {
 };
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien','1954', '304', 'No');
-const shogun = new Book('Shogun', 'James Clavell','1975', '1136', 'Yes');
-const dune = new Book('Dune', 'Frank Herbet','1965', '896', 'No');
+const shogun = new Book('Shogun', 'James Clavell','1975', '1136', 'No');
+const neuromancer = new Book('Neuromancer', 'William Gibson', '1984', '320', 'Yes');
+const dune = new Book('Dune', 'Frank Herbert','1965', '896', 'No');
+const groan = new Book('Titus Groan', 'Mervyn Peake', '1946', '438', 'Yes');
 
-const myLibrary = [theHobbit, shogun, dune];
+const myLibrary = [theHobbit, shogun, neuromancer, dune, groan];
 
 function displayLibrary() {
     table.innerHTML = '';
@@ -35,9 +37,9 @@ function displayLibrary() {
         cell3.innerHTML = book.year;
         cell4.innerHTML = book.pages;
         if (book.read == 'Yes') {
-            cell5.innerHTML = '<img id="check" src="./icons/check-bold.svg" alt="check">';
+            cell5.innerHTML = '<img id="check" src="./icons/check.svg" alt="check">';
         } else {
-            cell5.innerHTML = '<img id="cross" src="./icons/close-thick.svg" alt="cross">';
+            cell5.innerHTML = '<img id="cross" src="./icons/cross.svg" alt="cross">';
         }
         cell6.innerHTML = `<button id="del" data-index='${index}'>Delete</button>`
     });
