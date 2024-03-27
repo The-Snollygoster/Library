@@ -19,6 +19,7 @@
                 <th scope="col">Year of Publication</th>
                 <th scope="col"># of Pages</th>
                 <th scope="col">Read Status</th>
+                <th scope="col">Remove</th>
             </tr>
         </thead>
         <tbody id="table"></tbody>
@@ -33,23 +34,25 @@
         <h1 class="header">New Book</h1>
         <fieldset class="fieldset">
             <legend>Book Title</legend>
-            <input type="text" class="input" id="title" placeholder="What is it called?">
+            <input type="text" class="input" id="title" placeholder="What is it called?" required>
         </fieldset>
         <fieldset class="fieldset">
             <legend>Book Author</legend>
-            <input type="text" class="input" id="author" placeholder="Who wrote it?">
+            <input type="text" class="input" id="author" placeholder="Who wrote it?" required>
         </fieldset>
         <fieldset class="fieldset">
             <legend>Year of Publication</legend>
-            <input type="number" class="input" id="year" placeholder="What year did it come out?">
+            <input type="number" class="input" id="year" placeholder="What year did it come out?"
+            minlength="4" maxlength="4" required>
         </fieldset>
         <fieldset class="fieldset">
             <legend>Number of Pages</legend>
-            <input type="number" class="input" id="pages" placeholder="How long is it?">
+            <input type="number" class="input" id="pages" placeholder="How long is it?" required>
         </fieldset>
         <fieldset class="fieldset">
             <legend>Read it?</legend>
-            <input type="text" class="input" id="read" placeholder="Yes or No" pattern="^(?:Yes|No)$">
+            <input type="text" class="input" id="read" placeholder="Yes or No" pattern="^(?:yes|no|Yes|No)$"
+            required>
         </fieldset>
         <button type="submit" id="submit">Submit Book</button>
         <button type="button" id="cancel">Cancel</button>

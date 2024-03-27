@@ -29,16 +29,17 @@ function displayLibrary() {
         let cell3 = row.insertCell(2);
         let cell4 = row.insertCell(3);
         let cell5 = row.insertCell(4);
+        let cell6 = row.insertCell(5);
         cell1.innerHTML = book.title;
         cell2.innerHTML = book.author;
         cell3.innerHTML = book.year;
         cell4.innerHTML = book.pages;
-        cell5.innerHTML = book.read;
         if (book.read == 'Yes') {
             cell5.innerHTML = '<img id="check" src="./icons/check-bold.svg" alt="check">';
         } else {
             cell5.innerHTML = '<img id="cross" src="./icons/close-thick.svg" alt="cross">';
         }
+        cell6.innerHTML = '<button type="button" id="del">Delete</button>'
     });
 };
 
@@ -63,7 +64,14 @@ submit.addEventListener('click', (event) => {
 });
 
 cancel.addEventListener('click', () => {
+    document.getElementById('form').reset();
     dialog.close();
+});
+
+table.addEventListener('click', (e) => {
+    if (e.target.nodeName === 'BUTTON' && e.target.id === 'del') {
+        alert('Are you sure?');
+    };
 });
 
 displayLibrary();
