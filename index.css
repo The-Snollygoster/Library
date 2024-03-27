@@ -101,6 +101,10 @@ tr:nth-child(odd) td {
     height: 50px;
 }
 
+#submit {
+    margin-bottom: 10px;
+}
+
 #submit,
 #cancel {
     justify-self: center;

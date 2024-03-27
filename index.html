@@ -40,12 +40,16 @@
             <input type="text" class="input" id="author" placeholder="Who wrote it?">
         </fieldset>
         <fieldset class="fieldset">
+            <legend>Year of Publication</legend>
+            <input type="number" class="input" id="year" placeholder="What year did it come out?">
+        </fieldset>
+        <fieldset class="fieldset">
             <legend>Number of Pages</legend>
             <input type="number" class="input" id="pages" placeholder="How long is it?">
         </fieldset>
         <fieldset class="fieldset">
             <legend>Read it?</legend>
-            <input type="text" class="input" id="read" placeholder="Have you read it?" pattern="^(?:Yes|No)$">
+            <input type="text" class="input" id="read" placeholder="Yes or No" pattern="^(?:Yes|No)$">
         </fieldset>
         <button type="submit" id="submit">Submit Book</button>
         <button type="button" id="cancel">Cancel</button>

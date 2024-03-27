@@ -33,6 +33,7 @@ function displayLibrary() {
         cell2.innerHTML = book.author;
         cell3.innerHTML = book.year;
         cell4.innerHTML = book.pages;
+        cell5.innerHTML = book.read;
         if (book.read == 'Yes') {
             cell5.innerHTML = '<img id="check" src="./icons/check-bold.svg" alt="check">';
         } else {
@@ -50,9 +51,10 @@ submit.addEventListener('click', (event) => {
         event.preventDefault();
         let title = input[0].value;
         let author = input[1].value;
-        let pages = input[2].value;
-        let read = input[3].value;
-        let newBook = new Book(`${title}`, `${author}`, `${pages}`, `${read}`);
+        let year = input[2].value
+        let pages = input[3].value;
+        let read = input[4].value;
+        let newBook = new Book(`${title}`, `${author}`, `${year}`, `${pages}`, `${read}`);
         myLibrary.push(newBook);
         displayLibrary();
         document.getElementById('form').reset();
