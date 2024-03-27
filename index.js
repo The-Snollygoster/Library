@@ -14,6 +14,14 @@ function Book(title,author,year,pages,read) {
     this.read = read;
 };
 
+Book.prototype.toggleRead = function() {
+    if (this.read === 'Yes') {
+        this.read = 'No';
+    } else {
+        this.read = 'Yes';
+    }
+};
+
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien','1954', '304', 'No');
 const shogun = new Book('Shogun', 'James Clavell','1975', '1136', 'No');
 const neuromancer = new Book('Neuromancer', 'William Gibson', '1984', '320', 'Yes');
@@ -37,9 +45,9 @@ function displayLibrary() {
         cell3.innerHTML = book.year;
         cell4.innerHTML = book.pages;
         if (book.read == 'Yes') {
-            cell5.innerHTML = '<img id="check" src="./icons/check.svg" alt="check">';
+            cell5.innerHTML = `<img id="check" src="./icons/check.svg" alt="check" data-index='${index}'>`;
         } else {
-            cell5.innerHTML = '<img id="cross" src="./icons/cross.svg" alt="cross">';
+            cell5.innerHTML = `<img id="cross" src="./icons/cross.svg" alt="cross" data-index='${index}'>`;
         }
         cell6.innerHTML = `<button id="del" data-index='${index}'>Delete</button>`
     });
@@ -74,6 +82,17 @@ table.addEventListener('click', (e) => {
     if (e.target.nodeName === 'BUTTON' && e.target.id === 'del') {
         myLibrary.splice((e.target.dataset.index), 1);
         displayLibrary();
+    };
+
+    if (e.target.id === 'check' || e.target.id === 'cross') {
+        console.log(myLibrary[e.target.dataset.index])
+        myLibrary[e.target.dataset.index].toggleRead();
+        console.log(myLibrary[e.target.dataset.index])
+        if (e.target.id === 'check') {
+            e.target.parentNode.innerHTML = `<img id="cross" src="./icons/cross.svg" alt="cross" data-index='${e.target.dataset.index}'>`
+        } else if (e.target.id === 'cross') {
+            e.target.parentNode.innerHTML = `<img id="check" src="./icons/check.svg" alt="check" data-index='${e.target.dataset.index}'>`
+        };
     };
 });
 
