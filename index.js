@@ -22,7 +22,7 @@ const myLibrary = [theHobbit, shogun, dune];
 
 function displayLibrary() {
     table.innerHTML = '';
-    myLibrary.forEach(function (book) {
+    myLibrary.forEach(function (book, index) {
         let row = table.insertRow(-1);
         let cell1 = row.insertCell(0);
         let cell2 = row.insertCell(1);
@@ -39,7 +39,7 @@ function displayLibrary() {
         } else {
             cell5.innerHTML = '<img id="cross" src="./icons/close-thick.svg" alt="cross">';
         }
-        cell6.innerHTML = '<button type="button" id="del">Delete</button>'
+        cell6.innerHTML = `<button id="del" data-index='${index}'>Delete</button>`
     });
 };
 
@@ -70,7 +70,8 @@ cancel.addEventListener('click', () => {
 
 table.addEventListener('click', (e) => {
     if (e.target.nodeName === 'BUTTON' && e.target.id === 'del') {
-        alert('Are you sure?');
+        myLibrary.splice((e.target.dataset.index), 1);
+        displayLibrary();
     };
 });
 
