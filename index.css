@@ -98,19 +98,45 @@ tr:nth-child(odd) td {
     position: relative;
 }
 
-.tooltip {
-    position: absolute;
-    bottom: 40px;
-    min-width: 120px;
-    padding: 1rem;
-    border-radius: 0.4rem;
-    background: black;
-    color: white;
+.arrow_box {
+	position: absolute;
+    width: 100px;
+	background: #ecfeff;
+	border: 2px solid #0891b2;
+    color: #083344;
     opacity: 0;
-    transition: opacity 0.2s ease;
+    padding: 5px;
+    bottom: 40px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: "";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
 }
 
-.tooltip:hover {
+.arrow_box:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-top-color: #0891b2;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.arrow_box:before {
+	border-color: rgba(194, 225, 245, 0);
+	border-top-color: #ecfeff;
+	border-width: 12px;
+	margin-left: -12px;
+}
+
+table:hover > thead > tr > .readColumn > .arrow_box {
+    opacity: 1;
+}
+
+.arrow_box:hover {
     opacity: 1;
 }
 
