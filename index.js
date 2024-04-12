@@ -6,21 +6,41 @@ const cancel = document.querySelector('dialog #cancel')
 const input = document.querySelectorAll('input');
 const form = document.querySelector('form');
 
-function Book(title,author,year,pages,read) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title,author,year,pages,read) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.pages = pages;
+        this.read = read;
+    };
+
+    toggleRead() {
+        if (this.read === 'Yes') {
+            this.read = 'No';
+        } else {
+            this.read = 'Yes';
+        };
+
+        displayLibrary();
+    };
 };
 
-Book.prototype.toggleRead = function() {
-    if (this.read === 'Yes') {
-        this.read = 'No';
-    } else {
-        this.read = 'Yes';
-    }
-};
+// function Book(title,author,year,pages,read) {
+//     this.title = title;
+//     this.author = author;
+//     this.year = year;
+//     this.pages = pages;
+//     this.read = read;
+// };
+
+// Book.prototype.toggleRead = function() {
+//     if (this.read === 'Yes') {
+//         this.read = 'No';
+//     } else {
+//         this.read = 'Yes';
+//     }
+// };
 
 const theHobbit = new Book('The Hobbit', 'J.R.R Tolkien','1954', '304', 'No');
 const shogun = new Book('Shogun', 'James Clavell','1975', '1136', 'No');
